@@ -24,6 +24,10 @@ module.exports = {
         "accent-light": "#664C47",
         "primary-text": "#FFF2E0",
       },
+      backgroundImage: {
+        "service-bg": 'url("../src/assets/coffee-bg.png")',
+        "hero-bg": 'url("../src/assets/coffee-hero-bg.png")',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

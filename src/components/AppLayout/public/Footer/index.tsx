@@ -8,7 +8,7 @@ const socials = [
 ];
 export const Footer = () => {
   return (
-    <footer className="bg-primary">
+    <footer className="bg-primary-text">
       <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
         <nav
           className="-mb-6 columns-2 sm:flex sm:justify-center sm:space-x-12"
@@ -18,7 +18,7 @@ export const Footer = () => {
             <div key={item.name} className="pb-6">
               <a
                 href={item.href}
-                className="text-sm leading-6 text-primary-text hover:text-primary-text/90"
+                className="text-sm leading-6 text-accent-dark hover:text-accent-dark/90"
               >
                 {item.name}
               </a>
@@ -30,14 +30,14 @@ export const Footer = () => {
             <a
               key={item.name}
               href={item.href}
-              className="text-primary-text hover:text-primary-text/90"
+              className="text-accent-dark hover:text-accent-dark/90"
             >
               <span className="sr-only">{item.name}</span>
               <item.icons className="h-6 w-6" aria-hidden="true" />
             </a>
           ))}
         </div>
-        <p className="mt-10 text-center text-xs leading-5 text-primary-text">
+        <p className="mt-10 text-center text-xs leading-5 text-accent-dark">
           &copy; Build & Design by Jhnrmss
         </p>
       </div>

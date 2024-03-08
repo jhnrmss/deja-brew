@@ -6,8 +6,14 @@ import { Button } from "..";
 
 export const navigations = [
   {
-    name: "Our Coffee",
-    href: "coffee",
+    name: "Home",
+    href: "/",
+    current: true,
+    restricted: false,
+  },
+  {
+    name: "About Us",
+    href: "about",
     current: true,
     restricted: false,
   },
@@ -18,15 +24,15 @@ export const navigations = [
     restricted: false,
   },
   {
-    name: "About Us",
-    href: "about",
+    name: "Our Coffee",
+    href: "coffee",
     current: true,
     restricted: false,
   },
 ];
 export const Navigation = () => {
   return (
-    <Disclosure as="nav" className="bg-white ">
+    <Disclosure as="nav" className="bg-gray-50 ">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -39,7 +45,7 @@ export const Navigation = () => {
                     alt="Dejabrew Logo"
                   />
                 </div>
-                <div className="hidden h-full md:ml-6 md:flex md:gap-8 tracking-widest">
+                <div className="hidden h-full md:ml-6 md:flex md:gap-8 tracking-wide">
                   {navigations.map((item) => (
                     <NavLink
                       key={item.name}
@@ -61,8 +67,7 @@ export const Navigation = () => {
               </div>
 
               <div className="-mr-2 flex items-center md:hidden">
-                {/* Mobile menu button */}
-                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-textDark/70 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-textDark/70 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
                   <span className="absolute -inset-0.5" />
                   {open ? (
                     <FaXmark className="block h-6 w-6" aria-hidden="true" />
@@ -76,35 +81,15 @@ export const Navigation = () => {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
-              {/* Current: "bg-indigo-50 border-primary text-indigo-700", Default: "border-transparent text-textDark/70 hover:bg-gray-50 hover:border-gray-300 hover:text-textDark" */}
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-primary bg-indigo-50 py-2 pl-3 pr-4 text-base font-medium text-indigo-700"
-              >
-                Dashboard
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-textDark/70 hover:border-gray-300 hover:bg-gray-50 hover:text-textDark"
-              >
-                Team
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-textDark/70 hover:border-gray-300 hover:bg-gray-50 hover:text-textDark"
-              >
-                Projects
-              </Disclosure.Button>
-              <Disclosure.Button
-                as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-textDark/70 hover:border-gray-300 hover:bg-gray-50 hover:text-textDark"
-              >
-                Calendar
-              </Disclosure.Button>
+              {navigations.map((item) => (
+                <NavLink
+                  key={item.name}
+                  to={item.href}
+                  className="block text-center hover:border-l-4 hover:border-primary hover:bg-primary/10 py-2 pl-3 pr-4 text-base font-medium hover:text-accent-dark"
+                >
+                  <Disclosure.Button>{item.name}</Disclosure.Button>
+                </NavLink>
+              ))}
             </div>
           </Disclosure.Panel>
         </>
