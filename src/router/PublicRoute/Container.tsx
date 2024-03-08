@@ -1,6 +1,7 @@
 // import { useAtomValue } from 'jotai'
-import { Navigate, Outlet } from "react-router";
 // import { authAtom } from 'store/authAtom'
+
+import { PublicLayout } from "@/components";
 
 const Container = () => {
   // const auth = useAtomValue(authAtom)
@@ -9,7 +10,7 @@ const Container = () => {
   //     return <Navigate to='/order' />
   // }
 
-  return <Outlet />;
+  return <PublicLayout />;
 };
 
 export default Container;
