@@ -1,7 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { FaBars, FaXmark } from "react-icons/fa6";
 import mainLogo from "@/assets/main-logo.png";
-import { NavLink } from "react-router-dom";
 import { Button } from "..";
 
 export const navigations = [
