@@ -13,19 +13,19 @@ export const navigations = [
   },
   {
     name: "About Us",
-    href: "about",
+    href: "/#about",
     current: true,
     restricted: false,
   },
   {
     name: "Service",
-    href: "service",
+    href: "/#service",
     current: true,
     restricted: false,
   },
   {
-    name: "Our Coffee",
-    href: "coffee",
+    name: "Contact",
+    href: "/#contact",
     current: true,
     restricted: false,
   },
@@ -47,13 +47,13 @@ export const Navigation = () => {
                 </div>
                 <div className="hidden h-full md:ml-6 md:flex md:gap-8 tracking-wide">
                   {navigations.map((item) => (
-                    <NavLink
+                    <a
                       key={item.name}
-                      to={item.href}
+                      href={item.href}
                       className="inline-flex px-1 pt-1 items-center font-medium  hover:text-primary text-accent-dark"
                     >
                       {item.name}
-                    </NavLink>
+                    </a>
                   ))}
                 </div>
                 <div className="hidden md:flex md:gap-4 md:justify-center md:items-center">
@@ -82,13 +82,14 @@ export const Navigation = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
               {navigations.map((item) => (
-                <NavLink
+                <Disclosure.Button
                   key={item.name}
-                  to={item.href}
+                  as="a"
+                  href={item.href}
                   className="block text-center hover:border-l-4 hover:border-primary hover:bg-primary/10 py-2 pl-3 pr-4 text-base font-medium hover:text-accent-dark"
                 >
-                  <Disclosure.Button>{item.name}</Disclosure.Button>
-                </NavLink>
+                  {item.name}
+                </Disclosure.Button>
               ))}
             </div>
           </Disclosure.Panel>

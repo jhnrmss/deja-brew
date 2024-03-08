@@ -26,36 +26,38 @@ const features = [
 ];
 const Service = () => {
   return (
-    <div className="bg-service-bg bg-cover bg-no-repeat py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:text-center">
-          <h2 className="text-5xl  font-bold leading-7 text-accent-dark uppercase">
-            You'll <span className="text-primary">Love</span> It
-          </h2>
-        </div>
-        <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-          <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-            {features.map((feature) => (
-              <div
-                key={feature.name}
-                className="flex flex-col bg-primary-text rounded-md shadow-md px-8 py-4"
-              >
-                <dt className="flex flex-col items-center gap-x-3 text-lg font-bold leading-7 text-accent-dark">
-                  <feature.icon
-                    className="h-14 w-14 pb-4 flex-none text-primary"
-                    aria-hidden="true"
-                  />
-                  {feature.name}
-                </dt>
-                <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-accent-dark">
-                  <p className="flex-auto">{feature.description}</p>
-                </dd>
-              </div>
-            ))}
-          </dl>
+    <section id="service">
+      <div className="bg-service-bg bg-cover bg-no-repeat py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-5xl  font-bold leading-7 text-accent-dark uppercase">
+              You'll <span className="text-primary">Love</span> It
+            </h2>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+              {features.map((feature) => (
+                <div
+                  key={feature.name}
+                  className="flex flex-col bg-primary-text rounded-md shadow-md px-8 py-4"
+                >
+                  <dt className="flex flex-col items-center gap-x-3 text-lg font-bold leading-7 text-accent-dark">
+                    <feature.icon
+                      className="h-14 w-14 pb-4 flex-none text-primary"
+                      aria-hidden="true"
+                    />
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-accent-dark">
+                    <p className="flex-auto">{feature.description}</p>
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
